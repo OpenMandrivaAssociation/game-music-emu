@@ -51,6 +51,9 @@ variety of formats and systems.
 rm -rf %{buildroot}
 cd build
 %makeinstall_std
+%if %_lib != lib
+mv %buildroot%_prefix/lib/ %buildroot%_libdir
+%endif
 
 %clean
 rm -rf %{buildroot}
