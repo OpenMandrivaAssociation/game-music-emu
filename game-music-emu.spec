@@ -1,6 +1,6 @@
 %define name game-music-emu
 %define version 0.5.5
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define major 0
 %define libname %mklibname gme %major
