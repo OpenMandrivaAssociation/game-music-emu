@@ -68,3 +68,18 @@ rm -rf %{buildroot}
 %doc changes.txt design.txt
 %_libdir/libgme.so
 %_includedir/gme
+
+
+%changelog
+* Fri Aug 10 2012 Götz Waschk <waschk@mandriva.org> 0.5.5-4mdv2012.0
++ Revision: 813720
+- yearly rebuild
+
+* Sun Aug 07 2011 Götz Waschk <waschk@mandriva.org> 0.5.5-3
++ Revision: 693605
+- rebuild
+
+* Wed Aug 05 2009 Götz Waschk <waschk@mandriva.org> 0.5.5-2mdv2011.0
++ Revision: 410003
+- import game-music-emu
+
