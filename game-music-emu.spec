@@ -1,44 +1,38 @@
-%define name game-music-emu
-%define version 0.5.5
-%define release %mkrel 4
+%define major	0
+%define libname	%mklibname gme %{major}
+%define devname	%mklibname -d gme
 
-%define major 0
-%define libname %mklibname gme %major
-%define develname %mklibname -d gme
-
-Summary: Game Music Emulators library
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: http://game-music-emu.googlecode.com/files/%{name}-%{version}.tbz2
-License: LGPLv2+
-Group: Sound
-Url: http://code.google.com/p/game-music-emu/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: cmake
+Summary:	Game Music Emulators library
+Name:		game-music-emu
+Version:	0.5.5
+Release:	4
+License:	LGPLv2+
+Group:		Sound
+Url:		http://code.google.com/p/game-music-emu/
+Source0:	http://game-music-emu.googlecode.com/files/%{name}-%{version}.tbz2
+BuildRequires:	cmake
 
 %description
 This is a collection of video game music file emulators that supports a
 variety of formats and systems.
 
-%package -n %libname
-Group: System/Libraries
-Summary: Game Music Emulators library
+%package -n %{libname}
+Group:		System/Libraries
+Summary:	Game Music Emulators library
 
-%description -n %libname
+%description -n %{libname}
 This is a collection of video game music file emulators that supports a
 variety of formats and systems.
 
-%package -n %develname
-Group: Development/C++
-Summary: Game Music Emulators development library
-Requires: %libname = %version-%release
-Provides: libgme-devel = %version-%release
+%package -n %{devname}
+Group:		Development/C++
+Summary:	Game Music Emulators development library
+Requires:	%{libname} = %{version}-%{release}
+Provides:	libgme-devel = %{version}-%{release}
 
-%description -n %develname
+%description -n %{devname}
 This is a collection of video game music file emulators that supports a
 variety of formats and systems.
-
 
 %prep
 %setup -q
@@ -48,38 +42,17 @@ variety of formats and systems.
 %make
 
 %install
-rm -rf %{buildroot}
 cd build
 %makeinstall_std
-%if %_lib != lib
-mv %buildroot%_prefix/lib/ %buildroot%_libdir
+%if %{_lib} != lib
+mv %{buildroot}%{_prefix}/lib/ %{buildroot}%{_libdir}
 %endif
 
-%clean
-rm -rf %{buildroot}
-
-%files -n %libname
-%defattr(-,root,root)
-%doc readme.txt gme.txt
+%files -n %{libname}
 %_libdir/libgme.so.%{major}*
 
-%files -n %develname
-%defattr(-,root,root)
-%doc changes.txt design.txt
+%files -n %{devname}
+%doc readme.txt gme.txt changes.txt design.txt
 %_libdir/libgme.so
 %_includedir/gme
-
-
-%changelog
-* Fri Aug 10 2012 Götz Waschk <waschk@mandriva.org> 0.5.5-4mdv2012.0
-+ Revision: 813720
-- yearly rebuild
-
-* Sun Aug 07 2011 Götz Waschk <waschk@mandriva.org> 0.5.5-3
-+ Revision: 693605
-- rebuild
-
-* Wed Aug 05 2009 Götz Waschk <waschk@mandriva.org> 0.5.5-2mdv2011.0
-+ Revision: 410003
-- import game-music-emu
 
