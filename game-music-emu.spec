@@ -5,7 +5,7 @@
 Summary:	Game Music Emulators library
 Name:		game-music-emu
 Version:	0.6.2
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Sound
 Url:		http://code.google.com/p/game-music-emu/
