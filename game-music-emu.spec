@@ -1,15 +1,17 @@
 %define major	0
-%define libname	%mklibname gme %{major}
+%define libname	%mklibname gme
+%define oldlibname	%mklibname gme 0
 %define devname	%mklibname -d gme
 
 Summary:	Game Music Emulators library
 Name:		game-music-emu
-Version:	0.6.2
-Release:	3
+Version:	0.6.3
+Release:	1
 License:	LGPLv2+
 Group:		Sound
-Url:		http://code.google.com/p/game-music-emu/
-Source0:	https://bitbucket.org/mpyne/game-music-emu/downloads/%{name}-%{version}.tar.xz
+Url:		https://code.google.com/p/game-music-emu/
+Source0:  https://github.com/libgme/game-music-emu/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
+#Source0:	https://bitbucket.org/mpyne/game-music-emu/downloads/%{name}-%{version}.tar.xz
 BuildRequires:	cmake
 
 %description
@@ -19,6 +21,7 @@ variety of formats and systems.
 %package -n %{libname}
 Group:		System/Libraries
 Summary:	Game Music Emulators library
+%rename %{oldlibname}
 
 %description -n %{libname}
 This is a collection of video game music file emulators that supports a
