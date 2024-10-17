@@ -8,7 +8,7 @@ Version:	0.6.2
 Release:	3
 License:	LGPLv2+
 Group:		Sound
-Url:		http://code.google.com/p/game-music-emu/
+Url:		https://code.google.com/p/game-music-emu/
 Source0:	https://bitbucket.org/mpyne/game-music-emu/downloads/%{name}-%{version}.tar.xz
 BuildRequires:	cmake
 
