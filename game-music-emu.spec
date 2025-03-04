@@ -9,7 +9,7 @@ Release:	1
 License:	LGPLv2+
 Group:		Sound
 Url:		https://github.com/libgme/game-music-emu/
-Source0:	https://github.com/libgme/game-music-emu/archive/%{version}/%{name}-%{version}.tar.xz
+Source0:	https://github.com/libgme/game-music-emu/archive/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	cmake
 
 %description
