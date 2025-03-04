@@ -4,12 +4,12 @@
 
 Summary:	Game Music Emulators library
 Name:		game-music-emu
-Version:	0.6.2
-Release:	3
+Version:	0.6.4
+Release:	1
 License:	LGPLv2+
 Group:		Sound
-Url:		https://code.google.com/p/game-music-emu/
-Source0:	https://bitbucket.org/mpyne/game-music-emu/downloads/%{name}-%{version}.tar.xz
+Url:		https://github.com/libgme/game-music-emu/
+Source0:	https://github.com/libgme/game-music-emu/archive/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	cmake
 
 %description
@@ -39,11 +39,11 @@ variety of formats and systems.
 
 %build
 %cmake
-%make
+%make_build
 
 %install
 cd build
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %_libdir/libgme.so.%{major}*
