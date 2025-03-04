@@ -45,6 +45,8 @@ variety of formats and systems.
 cd build
 %make_install
 
+rm -f %{buildroot}/usr/lib64/libgme.a
+
 %files -n %{libname}
 %_libdir/libgme.so.%{major}*
 
